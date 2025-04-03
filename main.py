@@ -1,7 +1,18 @@
+#import the sys module
+import sys
+
 #import functions from stats.py
 from stats import word_count
 from stats import character_count
 from stats import final_report
+
+#Check the length of sys.argv
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+#Assign the file_path variable to sys.argv[1]
+file_path = sys.argv[1]
 
 #This function will open the .txt file of a book and save its contents as a string
 def get_book_text(file_path):
@@ -12,7 +23,6 @@ def get_book_text(file_path):
 
 #This function prints the text of the book bring read    
 def main():
-    file_path = "books/frankenstein.txt"
     text = get_book_text(file_path)
     num_words = word_count(text)
     num_chars = character_count(text)
