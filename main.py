@@ -21,7 +21,7 @@ def get_book_text(file_path):
 
         return book_text
 
-#This function prints the text of the book bring read    
+#This function executes the functions created previously and formats them to match assignment expectations    
 def main():
     text = get_book_text(file_path)
     num_words = word_count(text)
